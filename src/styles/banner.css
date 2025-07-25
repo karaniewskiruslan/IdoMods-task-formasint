@@ -1,0 +1,15 @@
+.banner {
+  display: grid;
+  gap: 42px;
+
+  .banner__logo {
+    @media (width < 640px) {
+      width: 100%;
+    }
+  }
+
+  .banner__mainImage {
+    width: 100%;
+    object-fit: cover;
+  }
+}

@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "./header.css";
+@import "./banner.css";
 
 * {
   margin: 0;
@@ -20,6 +22,12 @@
 
   --color-labels-bestseller: #d9d6b0;
   --color-labels-limited: #d9d6b0;
+
+  --size-normal: 42px;
+
+  @media (width < 640px) {
+    --size-normal: 16px;
+  }
 }
 
 a {
@@ -35,47 +43,13 @@ html {
 body {
   display: grid;
   grid-template-rows: auto 1fr;
-  min-height: 100vh;
+  min-height: 100dvh;
+  margin-inline: auto;
 }
 
-.header {
-  display: flex;
-  flex-direction: row;
-  padding-block: 32px;
-  justify-content: space-between;
-
-  & * {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .header__logo {
-    gap: 32px;
-
-    .header__logo__brandContainer {
-      gap: 12px;
-    }
-
-    .header__logo__icon {
-      aspect-ratio: 1;
-      height: 100%;
-      background: url("../public/icons/FORMAIconDefault.svg");
-    }
-
-    .header__logo__brandContainer:hover > .header__logo__icon {
-      background: url("../public/icons/FORMAIconFill.svg");
-    }
-  }
-
-  .header__nav {
-    ul {
-      gap: 42px;
-    }
-  }
-
-  .header__developer {
-    gap: 12px;
-  }
+body > * {
+  width: calc(100dvw - var(--size-normal) * 2);
+  margin-inline: auto;
 }
 
 h1 {
