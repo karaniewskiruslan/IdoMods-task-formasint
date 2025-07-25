@@ -1,61 +1,86 @@
 .header {
-  display: flex;
-  flex-direction: row;
-  padding-block: 32px;
-  justify-content: space-between;
-  margin-bottom: 80px;
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr;
 
-  & * {
+  .header__top {
     display: flex;
     flex-direction: row;
-  }
+    padding-block: 32px;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 80px;
 
-  .header__logo {
-    gap: 32px;
+    & * {
+      display: flex;
+      flex-direction: row;
+    }
 
-    & > p[data-bodyText] {
+    .header__logo {
+      gap: 32px;
+
+      & > p[data-bodyText] {
+        @media (width < 640px) {
+          display: none;
+        }
+      }
+
+      .header__logo__brandContainer {
+        gap: 12px;
+      }
+      .header__logo__icon {
+        aspect-ratio: 1;
+        height: 100%;
+        background: url("../../public/icons/FORMAIconDefault.svg");
+      }
+      .header__logo__brandContainer:hover > .header__logo__icon {
+        background: url("../../public/icons/FORMAIconFill.svg");
+      }
+    }
+
+    .header__nav {
+      @media (width < 640px) {
+        display: none;
+      }
+
+      ul {
+        gap: 42px;
+      }
+    }
+
+    .header__developer {
+      gap: 12px;
+
       @media (width < 640px) {
         display: none;
       }
     }
 
-    .header__logo__brandContainer {
-      gap: 12px;
-    }
-    .header__logo__icon {
-      aspect-ratio: 1;
-      height: 100%;
-      background: url("../../public/icons/FORMAIconDefault.svg");
-    }
-    .header__logo__brandContainer:hover > .header__logo__icon {
-      background: url("../../public/icons/FORMAIconFill.svg");
-    }
-  }
-
-  .header__nav {
-    @media (width < 640px) {
+    .header__burgerMenu {
       display: none;
-    }
 
-    ul {
-      gap: 42px;
+      @media (width < 640px) {
+        display: inherit;
+        gap: 12px;
+      }
+    }
+  }
+}
+
+.header__banner {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 42px;
+
+  .header__banner__logo {
+    @media (width < 640px) {
+      width: 100%;
     }
   }
 
-  .header__developer {
-    gap: 12px;
-
-    @media (width < 640px) {
-      display: none;
-    }
-  }
-
-  .header__burgerMenu {
-    display: none;
-
-    @media (width < 640px) {
-      display: inherit;
-      gap: 12px;
-    }
+  .header__banner__mainImage {
+    background: url("../../public/banner/bannerPhoto.webp") center;
+    background-size: cover;
+    border-radius: 8px;
   }
 }
