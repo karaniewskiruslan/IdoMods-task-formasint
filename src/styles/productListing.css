@@ -1,0 +1,25 @@
+.productListing {
+  padding-block: 42px;
+
+  @media (width < 640px) {
+    padding-block: 24px 64px;
+  }
+}
+.productListing .productListing__title {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+
+  @media (width < 640px) {
+    flex-direction: column;
+  }
+}
+
+.title__itemsPerPage {
+  display: flex;
+  gap: 24px;
+  place-items: center;
+  padding-inline: 12px;
+}
