@@ -5,12 +5,13 @@
     <link rel="icon" type="image/svg+xml" href="/icons/FORMAIconDefault.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/styles/main.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Forma’sint</title>
-    <script defer type="module" src="/src/main.js"></script>
+    <script defer type="module" src="/src/scripts/main.js"></script>
   </head>
   <body>
-    <header class="header">
-      <section class="header__top">
+    <section class="header">
+      <header class="header__top">
         <article class="header__logo">
           <div class="header__logo__brandContainer">
             <div class="header__logo__icon"></div>
@@ -26,20 +27,86 @@
           </ul>
         </nav>
         <article class="header__developer">
-          <img src="./public/icons/ICONSIconUser.svg" alt="Rusłan Karaniewski developer' logo" />
+          <img src="/icons/ICONSIconUser.svg" alt="Rusłan Karaniewski developer' logo" />
           <p data-bodyText>Rusłan Karaniewski</p>
         </article>
         <article class="header__burgerMenu">
-          <img src="./public/icons/ICONSMenuHamburger.svg" alt="Burger Menu" />
+          <img src="/icons/ICONSMenuHamburger.svg" alt="Burger Menu" />
           <p data-bodyText>menu</p>
         </article>
-      </section>
+      </header>
       <section class="header__banner">
-        <img loading="lazy" src="./public/logoForma.svg" alt="" class="header__banner__logo" />
-        <section class="header__banner__mainImage">
-          <!-- <img src="./public/banner/bannerPhoto.webp" alt=""> -->
+        <img loading="lazy" src="/logoForma.svg" alt="" class="header__banner__logo" />
+        <section class="header__banner__mainImage"></section>
+      </section>
+    </section>
+    <section id="featuredProduct" class="featuredProduct">
+      <hgroup class="featuredProduct__title">
+        <p data-bodyText>featured products</p>
+        <h1>Browse featured</h1>
+      </hgroup>
+      <section class="featuredProduct__swiper">
+        <div class="swiper my-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <section class="swiper-slide__product swiper__product">
+                <img loading="lazy" src="/swiper/product_photo_01.webp" alt="" />
+                <div class="swiper__product--favorite"></div>
+              </section>
+              <section class="swiper-slide__text">
+                <p data-bodyLarge>Dark blue alpine climbing jacket</p>
+                <p data-bodyText>€300,00 EUR</p>
+              </section>
+            </div>
+
+            <div class="swiper-slide">
+              <section class="swiper-slide__product swiper__product">
+                <img loading="lazy" src="/swiper/product_photo_02.webp" alt="" />
+                <div class="swiper__product--favorite"></div>
+              </section>
+              <section class="swiper-slide__text">
+                <p data-bodyLarge>Orange helmet for alpine TOUNDRA</p>
+                <p data-bodyText>€300,00 EUR</p>
+              </section>
+            </div>
+
+            <div class="swiper-slide">
+              <section class="swiper-slide__product swiper__product">
+                <img loading="lazy" src="/swiper/product_photo_03.webp" alt="" />
+                <div class="swiper__product--favorite"></div>
+              </section>
+              <section class="swiper-slide__text">
+                <p data-bodyLarge>Grey alpine climbing jacket</p>
+                <p data-bodyText>€300,00 EUR</p>
+              </section>
+            </div>
+
+            <div class="swiper-slide">
+              <section class="swiper-slide__product swiper__product">
+                <img loading="lazy" src="/swiper/product_photo_01.webp" alt="" />
+                <div class="swiper__product--favorite"></div>
+              </section>
+              <section class="swiper-slide__text">
+                <p data-bodyLarge>Grey alpine climbing jacket</p>
+                <p data-bodyText>€300,00 EUR</p>
+              </section>
+            </div>
+          </div>
+
+          <button class="swiper__array swiper__array--prev">
+            <img src="/icons/ICONSSliderArrow.svg" alt="prev" />
+          </button>
+
+          <button class="swiper__array swiper__array--next">
+            <img src="/icons/ICONSSliderArrow.svg" alt="next" />
+          </button>
+        </div>
+
+        <section class="swiper__scrollbar--container">
+          <div class="swiper__scrollbar"></div>
         </section>
       </section>
-    </header>
+    </section>
+    <main></main>
   </body>
 </html>
