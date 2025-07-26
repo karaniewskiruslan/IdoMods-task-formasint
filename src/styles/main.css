@@ -43,10 +43,6 @@ body {
   display: grid;
   grid-template-rows: repeat(3, auto);
   min-height: 100dvh;
-
-  @media (width < 640px) {
-    gap: 36px;
-  }
 }
 
 body > * {
