@@ -35,11 +35,11 @@
 .header__logo__icon {
   aspect-ratio: 1;
   height: 100%;
-  background: url("../../public/icons/FORMAIconDefault.svg");
+  background: url("/icons/FORMAIconDefault.svg");
 }
 
 .header__logo__brandContainer:hover > .header__logo__icon {
-  background: url("../../public/icons/FORMAIconFill.svg");
+  background: url("/icons/FORMAIconFill.svg");
 }
 
 @media (max-width: 699px) {
