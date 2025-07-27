@@ -3,24 +3,10 @@ import { A11y, Navigation, Scrollbar } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
-
-const getAPI = async () => {
-  const url = "https://brandstestowy.smallhost.pl/api/random";
-
-  try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    return data;
-  } catch (e) {
-    return console.error(`Warning! Cannot get API data. Reason: , ${e}`);
-  }
-};
+import setChangingPage from "./pageLoading";
+import { PAGE_AMOUNT } from "../constants/constants";
+import { renderItems, renderPageItems } from "./itemsListRender";
+import { scrollAddItems } from "./scrollAddItems";
 
 new Swiper(".my-swiper", {
   modules: [Navigation, Scrollbar, A11y],
@@ -31,7 +17,7 @@ new Swiper(".my-swiper", {
   a11y: true,
   breakpoints: {
     640: { slidesPerView: 2, spaceBetween: 20 },
-    1024: { slidesPerView: 3, spaceBetween: 24 },
+    864: { slidesPerView: 3, spaceBetween: 24 },
     1280: { slidesPerView: 4, spaceBetween: 24 },
   },
   navigation: {
@@ -45,3 +31,17 @@ new Swiper(".my-swiper", {
     hide: false,
   },
 });
+
+const selector = document.querySelector(".title__itemsPerPage");
+
+setChangingPage(PAGE_AMOUNT[0]);
+
+const handleClickSelector = () => {
+  console.log("111");
+};
+
+selector.addEventListener("click", handleClickSelector);
+
+renderItems(await renderPageItems());
+
+document.addEventListener("scroll", scrollAddItems);

@@ -109,8 +109,22 @@
     <footer id="productListing" class="productListing">
       <article class="productListing__title title">
         <p data-bodyText>Number of products per page</p>
-        <div class="title__itemsPerPage">14 <img src="./public/icons/ICONSchevron_down.svg" alt=""></div>
+        <div class="title__itemsPerPage">
+          <span data-itemsPerPage="14">14</span>
+          <img src="/icons/ICONSchevron_down.svg" alt="Change items amount" />
+        </div>
+
+        <div class="title__changeItems changeItems">
+          <div class="changeItems__option changeItems__option--blocked">
+            14 <img src="/icons/ICONSchevron_down.svg" alt="Change items amount" />
+          </div>
+          <ul class="changeItems__options">
+            <li class="changeItems__option">24</li>
+            <li class="changeItems__option">36</li>
+          </ul>
+        </div>
       </article>
+      <section class="productListing__itemsList itemsList" data-itemsList></section>
     </footer>
   </body>
 </html>
