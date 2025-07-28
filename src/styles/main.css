@@ -37,7 +37,7 @@ body {
   padding-inline: 42px;
 }
 
-@media (max-width: 639px) {
+@media (width < 640px) {
   body {
     padding-inline: 16px;
   }
@@ -62,7 +62,7 @@ h2 {
   color: var(--color-primary-black);
 }
 
-@media (max-width: 639px) {
+@media (width <  640px) {
   h1,
   h2 {
     font-size: 32px;

@@ -22,7 +22,7 @@
   gap: 32px;
 }
 
-@media (max-width: 999px) {
+@media (width < 1000px) {
   .header__logo > p[data-bodyText] {
     display: none;
   }
@@ -42,7 +42,7 @@
   background: url("/icons/FORMAIconFill.svg");
 }
 
-@media (max-width: 699px) {
+@media (width < 700px) {
   .header__nav {
     display: none;
   }
@@ -56,13 +56,13 @@
   gap: 12px;
 }
 
-@media (max-width: 799px) {
+@media (mwidth < 800px) {
   .header__developer p {
     display: none;
   }
 }
 
-@media (max-width: 699px) {
+@media (width < 700px) {
   .header__developer {
     display: none;
   }
@@ -72,7 +72,7 @@
   display: none;
 }
 
-@media (max-width: 699px) {
+@media (width < 700px) {
   .header__burgerMenu {
     display: inherit;
     gap: 12px;
@@ -85,7 +85,7 @@
   gap: 42px;
 }
 
-@media (max-width: 999px) {
+@media (width < 1000px) {
   .header__banner__logo {
     width: 100%;
   }

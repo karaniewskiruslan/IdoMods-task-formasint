@@ -30,12 +30,11 @@ const createItemElement = (item) => {
 };
 
 export const renderPageItems = async () => {
-  console.log(global)
+  console.log(global);
   const items = await getPagePhoto(global.page, global.itemsPerPage);
 
   global.page++;
-  global.itemsList.push(...items);
-  global.itemsList = [...new Set(global.itemsList)];
+  global.itemsList = [...global.itemsList, ...items];
   global.loading = false;
 
   return global.itemsList;

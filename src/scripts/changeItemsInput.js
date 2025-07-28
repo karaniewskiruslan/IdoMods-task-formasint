@@ -19,7 +19,7 @@ const changeItemsInput = () => {
   });
 };
 
-export const changeNumberOfItems = (onChange) => {
+export const changeNumberOfItems = (onChange = () => {}) => {
   const optionChoice = document.querySelector(".changeItemsInput__options");
   const inputChange = document.querySelector(".changeItemsInput");
 
@@ -46,9 +46,7 @@ export const changeNumberOfItems = (onChange) => {
 
     changeItemsInput();
 
-    if (typeof onChange === "function") {
-      await onChange(chosenOption);
-    }
+    await onChange(chosenOption);
 
     if (inputChange) inputChange.classList.add("changeItemsInput--hide");
   });

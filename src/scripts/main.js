@@ -31,14 +31,13 @@ new Swiper(".my-swiper", {
     el: ".swiper__scrollbar",
     dragClass: "swiper__scrollbar--drag",
     hide: false,
+    draggable: true,
   },
 });
 
 const selector = document.querySelector(".title__itemsPerPage");
 const chosenItem = document.querySelector(".changeItemsInput__option--blocked");
 const inputChange = document.querySelector(".changeItemsInput");
-
-const optionChoice = document.querySelector(".changeItemsInput__options");
 
 setChangingPage(PAGE_AMOUNT[0]);
 
@@ -53,7 +52,6 @@ renderItems(await renderPageItems());
 
 document.addEventListener("scroll", scrollAddItems);
 
-optionChoice.addEventListener("click", async () => {
-  console.log("111");
-  changeNumberOfItems(async () => renderItems(await renderPageItems()));
+changeNumberOfItems(async () => {
+  renderItems(await renderPageItems());
 });
