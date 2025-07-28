@@ -7,6 +7,7 @@ import setChangingPage from "./pageLoading";
 import { PAGE_AMOUNT } from "../constants/constants";
 import { renderItems, renderPageItems } from "./itemsListRender";
 import { scrollAddItems } from "./scrollAddItems";
+import { changeNumberOfItems } from "./changeItemsInput";
 
 new Swiper(".my-swiper", {
   modules: [Navigation, Scrollbar, A11y],
@@ -15,6 +16,7 @@ new Swiper(".my-swiper", {
   spaceBetween: 16,
   watchOverflow: false,
   a11y: true,
+  slideClass: "swiper__slide",
   breakpoints: {
     640: { slidesPerView: 2, spaceBetween: 20 },
     864: { slidesPerView: 3, spaceBetween: 24 },
@@ -33,15 +35,25 @@ new Swiper(".my-swiper", {
 });
 
 const selector = document.querySelector(".title__itemsPerPage");
+const chosenItem = document.querySelector(".changeItemsInput__option--blocked");
+const inputChange = document.querySelector(".changeItemsInput");
+
+const optionChoice = document.querySelector(".changeItemsInput__options");
 
 setChangingPage(PAGE_AMOUNT[0]);
 
 const handleClickSelector = () => {
-  console.log("111");
+  inputChange.classList.toggle("changeItemsInput--hide");
 };
 
 selector.addEventListener("click", handleClickSelector);
+chosenItem.addEventListener("click", handleClickSelector);
 
 renderItems(await renderPageItems());
 
 document.addEventListener("scroll", scrollAddItems);
+
+optionChoice.addEventListener("click", async () => {
+  console.log("111");
+  changeNumberOfItems(async () => renderItems(await renderPageItems()));
+});

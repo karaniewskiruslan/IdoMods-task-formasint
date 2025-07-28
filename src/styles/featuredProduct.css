@@ -34,13 +34,13 @@
   position: relative;
 }
 
-.swiper-slide {
+.swiper__slide {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.swiper-slide__product {
+.swiper__slide__product {
   aspect-ratio: 1;
   position: relative;
   display: grid;
@@ -50,7 +50,7 @@
   overflow: hidden;
 }
 
-.swiper-slide__text {
+.swiper__slide__text {
   padding-inline: 12px;
 }
 

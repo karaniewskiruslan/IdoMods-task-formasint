@@ -30,14 +30,10 @@ const createItemElement = (item) => {
 };
 
 export const renderPageItems = async () => {
+  console.log(global)
   const items = await getPagePhoto(global.page, global.itemsPerPage);
 
-  console.log(global);
-
   global.page++;
-
-  console.log(global.page);
-
   global.itemsList.push(...items);
   global.itemsList = [...new Set(global.itemsList)];
   global.loading = false;
@@ -53,7 +49,7 @@ export const renderItems = (list = []) => {
     if (global.initialRender) {
       const banner = createItemBanner();
       itemsContainer.appendChild(banner);
-      global.initialRender = false;
+      // global.initialRender = false;
     }
 
     const newElement = createItemElement(item);
