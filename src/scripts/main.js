@@ -8,6 +8,7 @@ import { PAGE_AMOUNT } from "../constants/constants";
 import { renderItems, renderPageItems } from "./itemsListRender";
 import { scrollAddItems } from "./scrollAddItems";
 import { changeNumberOfItems } from "./changeItemsInput";
+import { closePopUp, openPopUp } from "./popUpHandlers";
 
 new Swiper(".my-swiper", {
   modules: [Navigation, Scrollbar, A11y],
@@ -55,3 +56,8 @@ document.addEventListener("scroll", scrollAddItems);
 changeNumberOfItems(async () => {
   renderItems(await renderPageItems());
 });
+
+const popUpCloseButton = document.querySelector(".popUpContainer__closeButton");
+
+popUpCloseButton.addEventListener("click", closePopUp);
+document.addEventListener("click", openPopUp);

@@ -1,5 +1,5 @@
 import { PAGE_AMOUNT } from "../constants/constants";
-import global from "./globalState/globalState";
+import globalState from "./globalState/globalState";
 
 const changeItemsInput = () => {
   const currentItems = document.querySelector(".changeItemsInput__option--current");
@@ -8,7 +8,7 @@ const changeItemsInput = () => {
 
   if (!currentItems) return;
 
-  const itemsPerPage = global.itemsPerPage;
+  const itemsPerPage = globalState.itemsPerPage;
   const remainOptions = PAGE_AMOUNT.filter((el) => el !== itemsPerPage);
 
   currentItems.innerText = itemsPerPage;
@@ -32,17 +32,17 @@ export const changeNumberOfItems = (onChange = () => {}) => {
     const chosenOption = Number(option.innerText);
 
     if (!PAGE_AMOUNT.includes(chosenOption)) return;
-    if (chosenOption === global.itemsPerPage) {
+    if (chosenOption === globalState.itemsPerPage) {
       if (inputChange) inputChange.classList.add("changeItemsInput--hide");
       return;
     }
 
-    global.itemsPerPage = chosenOption;
-    global.itemsList = [];
-    global.initialRender = false;
-    global.page = 1;
+    globalState.itemsPerPage = chosenOption;
+    globalState.itemsList = [];
+    globalState.initialRender = false;
+    globalState.page = 1;
 
-    console.log(global);
+    console.log(globalState);
 
     changeItemsInput();
 

@@ -2,7 +2,7 @@
 
 import { createItemBanner } from "./createItemBanner";
 import getPagePhoto from "./getPagePhoto";
-import global from "./globalState/globalState";
+import globalState from "./globalState/globalState";
 
 const createItemElement = (item) => {
   const { id, text, image } = item;
@@ -30,14 +30,14 @@ const createItemElement = (item) => {
 };
 
 export const renderPageItems = async () => {
-  console.log(global);
-  const items = await getPagePhoto(global.page, global.itemsPerPage);
+  console.log(globalState);
+  const items = await getPagePhoto(globalState.page, globalState.itemsPerPage);
 
-  global.page++;
-  global.itemsList = [...global.itemsList, ...items];
-  global.loading = false;
+  globalState.page++;
+  globalState.itemsList = [...globalState.itemsList, ...items];
+  globalState.loading = false;
 
-  return global.itemsList;
+  return globalState.itemsList;
 };
 
 export const renderItems = (list = []) => {
@@ -45,10 +45,9 @@ export const renderItems = (list = []) => {
   itemsContainer.innerHTML = "";
 
   list.forEach((item, i) => {
-    if (global.initialRender) {
+    if (globalState.initialRender) {
       const banner = createItemBanner();
       itemsContainer.appendChild(banner);
-      // global.initialRender = false;
     }
 
     const newElement = createItemElement(item);

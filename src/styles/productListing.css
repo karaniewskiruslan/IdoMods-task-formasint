@@ -147,6 +147,7 @@
   background: var(--color-primary-gray);
   border-radius: 6px;
   padding: 32px;
+  cursor: zoom-in;
 }
 
 @media (width < 1024px) {

@@ -1,6 +1,6 @@
 import { PAGE_AMOUNT } from "../../constants/constants";
 
-export const global = {
+export const globalState = {
   itemsList: [],
   itemsPerPage: PAGE_AMOUNT[0],
   page: 1,
@@ -8,4 +8,4 @@ export const global = {
   loading: false,
 };
 
-export default global;
+export default globalState;
