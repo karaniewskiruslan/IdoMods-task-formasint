@@ -48,8 +48,27 @@
   }
 }
 
-.header__nav ul {
+.header__nav__list {
   gap: 42px;
+}
+
+.header__nav__page > a {
+  position: relative;
+}
+
+.header__nav__page > a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: var(--color-primary-black);
+  inset: auto auto 0 0;
+  scale: 0 1;
+  transition: 0.1617s ease-in-out;
+}
+
+.header__nav__page:hover > a::after {
+  scale: 1 1;
 }
 
 .header__developer {
