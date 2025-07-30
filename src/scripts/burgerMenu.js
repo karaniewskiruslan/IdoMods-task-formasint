@@ -15,3 +15,11 @@ export const handleClickSectionName = (e) => {
     section.addEventListener("click", handleCloseBurgerMenu);
   });
 };
+
+export const handleClickCloseUnderMenu = (e) => {
+  const clickedElem = e.target;
+
+  if (clickedElem === burgerMenu) {
+    handleCloseBurgerMenu();
+  }
+};
