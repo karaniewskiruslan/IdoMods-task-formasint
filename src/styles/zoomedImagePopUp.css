@@ -65,9 +65,4 @@
 
 .popUpContainer__closeButton {
   inset: var(--paddingSize) var(--paddingSize) auto auto;
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
 }

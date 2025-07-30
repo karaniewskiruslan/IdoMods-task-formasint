@@ -26,7 +26,6 @@ export const changeNumberOfItems = (onChange = () => {}) => {
   optionChoice.addEventListener("click", async (e) => {
     const option = e.target.closest(".changeItemsInput__option:not(.changeItemsInput__option--blocked)");
 
-    console.log(option);
     if (!option) return;
 
     const chosenOption = Number(option.innerText);
@@ -41,8 +40,6 @@ export const changeNumberOfItems = (onChange = () => {}) => {
     globalState.itemsList = [];
     globalState.initialRender = false;
     globalState.page = 1;
-
-    console.log(globalState);
 
     changeItemsInput();
 

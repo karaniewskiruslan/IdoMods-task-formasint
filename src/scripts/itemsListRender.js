@@ -30,7 +30,6 @@ const createItemElement = (item) => {
 };
 
 export const renderPageItems = async () => {
-  console.log(globalState);
   const items = await getPagePhoto(globalState.page, globalState.itemsPerPage);
 
   globalState.page++;

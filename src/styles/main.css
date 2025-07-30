@@ -40,7 +40,7 @@ body {
   overflow: hidden;
 }
 
-body:has(.zoomedImagePopUp--closed) {
+body:has(.zoomedImagePopUp--closed):has(.burgerMenu--closed) {
   overflow: auto;
 }
 
@@ -97,4 +97,12 @@ h2 {
   [data-bodyLarge] {
     font-size: 18px;
   }
+}
+
+.closeButton {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }

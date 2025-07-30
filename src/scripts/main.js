@@ -9,6 +9,7 @@ import { renderItems, renderPageItems } from "./itemsListRender";
 import { scrollAddItems } from "./scrollAddItems";
 import { changeNumberOfItems } from "./changeItemsInput";
 import { closePopUp, openPopUp } from "./popUpHandlers";
+import { handleClickSectionName, handleCloseBurgerMenu, handleOpenBurgerMenu } from "./burgerMenu";
 
 new Swiper(".my-swiper", {
   modules: [Navigation, Scrollbar, A11y],
@@ -39,6 +40,9 @@ new Swiper(".my-swiper", {
 const selector = document.querySelector(".title__itemsPerPage");
 const chosenItem = document.querySelector(".changeItemsInput__option--blocked");
 const inputChange = document.querySelector(".changeItemsInput");
+const popUpCloseButton = document.querySelector(".popUpContainer__closeButton");
+const burgerMenuButton = document.querySelector(".header__burgerMenu");
+const burgerMenuCloseButton = document.querySelector(".menu__topBar__closeButton");
 
 setChangingPage(PAGE_AMOUNT[0]);
 
@@ -48,16 +52,16 @@ const handleClickSelector = () => {
 
 selector.addEventListener("click", handleClickSelector);
 chosenItem.addEventListener("click", handleClickSelector);
+document.addEventListener("scroll", scrollAddItems);
+window.addEventListener("resize", handleCloseBurgerMenu);
+burgerMenuButton.addEventListener("click", handleOpenBurgerMenu);
+burgerMenuCloseButton.addEventListener("click", handleCloseBurgerMenu);
+popUpCloseButton.addEventListener("click", closePopUp);
+document.addEventListener("click", openPopUp);
 
 renderItems(await renderPageItems());
-
-document.addEventListener("scroll", scrollAddItems);
+handleClickSectionName();
 
 changeNumberOfItems(async () => {
   renderItems(await renderPageItems());
 });
-
-const popUpCloseButton = document.querySelector(".popUpContainer__closeButton");
-
-popUpCloseButton.addEventListener("click", closePopUp);
-document.addEventListener("click", openPopUp);

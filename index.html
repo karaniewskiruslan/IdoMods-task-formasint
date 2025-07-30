@@ -33,6 +33,23 @@
           <img src="/icons/ICONSMenuHamburger.svg" alt="Burger Menu" />
           <p data-bodyText>menu</p>
         </article>
+        <section class="burgerMenu burgerMenu--closed">
+          <div class="burgerMenu__menu menu">
+            <div class="menu__topBar">
+              <img src="/icons/ICONSFormaIcon.svg" alt="close" />
+              <button data-bodyText class="menu__topBar__closeButton closeButton">
+                close <img src="/icons/ICONSClose.svg" alt="close" />
+              </button>
+            </div>
+            <div class="menu__nav">
+              <ul class="menu__nav__list">
+                <li class="menu__nav__page"><a data-bodyText href="#">home</a></li>
+                <li class="menu__nav__page"><a data-bodyText href="#featuredProduct">featured product</a></li>
+                <li class="menu__nav__page"><a data-bodyText href="#productListing">product listing</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </header>
       <section class="header__banner">
         <img loading="lazy" src="/logoForma.svg" alt="" class="header__banner__logo" />
@@ -131,7 +148,7 @@
       <div class="zoomedImagePopUp__popUpContainer popUpContainer">
         <img class="popUpContainer__image" src="/swiper/product_photo_03.webp" alt="" />
         <p data-bodyText class="popUpContainer__idText">test: 404</p>
-        <button data-bodyText class="popUpContainer__closeButton">
+        <button data-bodyText class="popUpContainer__closeButton closeButton">
           close <img src="/icons/ICONSClose.svg" alt="close" />
         </button>
       </div>
