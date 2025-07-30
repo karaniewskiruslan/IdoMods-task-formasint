@@ -26,6 +26,16 @@
 
   --color-labels-bestseller: #d9d6b0;
   --color-labels-limited: #d4b0d9;
+
+  --header-padding: 32px;
+  --header-margin: 80px;
+}
+
+@media (width < 700px) {
+  :root {
+    --header-padding: 24px;
+    --header-margin: 64px;
+  }
 }
 
 html {
