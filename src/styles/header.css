@@ -1,13 +1,13 @@
 .header__top {
-  display: flex;
-  position: sticky;
-  flex-direction: row;
-  padding-block: var(--header-padding);
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: var(--header-margin);
-  top: 0;
   background: var(--color-primary-white);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: var(--header-margin);
+  padding-block: var(--header-padding);
+  width: 100%;
+  position: sticky;
+  top: 0;
   z-index: 7;
 }
 
@@ -32,8 +32,8 @@
 
 .header__logo__icon {
   aspect-ratio: 1;
-  height: 100%;
   background: url("/icons/FORMAIconDefault.svg");
+  height: 100%;
 }
 
 .header__logo__brandContainer:hover > .header__logo__icon {
@@ -55,14 +55,14 @@
 }
 
 .header__nav__page > a::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 1px;
   background: var(--color-primary-black);
+  content: "";
   inset: auto auto 0 0;
+  height: 1px;
+  position: absolute;
   scale: 0 1;
   transition: 0.1617s ease-in-out;
+  width: 100%;
 }
 
 .header__nav__page:hover > a::after {
@@ -91,10 +91,9 @@
 
 @media (width < 700px) {
   .header__burgerMenu {
-    display: inherit;
+    align-items: center;
     cursor: pointer;
     display: flex;
-    align-items: center;
     gap: 12px;
   }
 }
@@ -119,14 +118,13 @@
 }
 
 .burgerMenu {
-  position: fixed;
-  width: 100dvw;
-  height: 100dvh;
-  inset: 0 0 auto auto;
   background: var(--color-primary-black-popUp);
-  z-index: 10;
-
+  position: fixed;
+  inset: 0 0 auto auto;
+  height: 100dvh;
   transition: 0.314s opacity, events ease-in-out;
+  width: 100dvw;
+  z-index: 10;
 }
 
 .burgerMenu--closed {
@@ -135,16 +133,16 @@
 }
 
 .menu {
+  background: var(--color-primary-white);
   position: absolute;
-  inset: 0 0 auto auto;
   display: flex;
   flex-direction: column;
   gap: 80px;
-  padding-inline: 32px 16px;
-  background: var(--color-primary-white);
-  width: 290px;
+  inset: 0 0 auto auto;
   height: 100dvh;
+  padding-inline: 32px 16px;
   transition: 0.314s transform ease-in-out;
+  width: 290px;
 }
 
 .burgerMenu--closed > .menu {
@@ -154,8 +152,8 @@
 .menu__topBar {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   padding-block: 24px;
+  width: 100%;
 }
 
 .menu__topBar img {
@@ -165,6 +163,6 @@
 
 .menu__nav__list {
   display: grid;
-  grid-template-rows: repeat(3, auto);
   gap: 24px;
+  grid-template-rows: repeat(3, auto);
 }

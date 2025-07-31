@@ -11,8 +11,6 @@ const createItemElement = (item) => {
 
   const productItem = document.createElement("div");
   productItem.classList.add("itemsList__productItem", "productItem");
-  const productContainer = document.createElement("div");
-  productContainer.classList.add("productItem__container");
   const productIDtext = document.createElement("p");
   productIDtext.setAttribute("data-special", "");
   productIDtext.innerText = idText;
@@ -22,10 +20,8 @@ const createItemElement = (item) => {
   productImg.alt = text;
   productImg.setAttribute("loading", "lazy");
 
-  productContainer.appendChild(productIDtext);
-  productContainer.appendChild(productImg);
-
-  productItem.appendChild(productContainer);
+  productItem.appendChild(productIDtext);
+  productItem.appendChild(productImg);
 
   return productItem;
 };
@@ -45,7 +41,7 @@ export const renderItems = (list = []) => {
   itemsContainer.innerHTML = "";
 
   list.forEach((item, i) => {
-    if (globalState.initialRender) {
+    if (globalState.initialRender && i === 0) {
       const banner = createItemBanner();
       itemsContainer.appendChild(banner);
     }

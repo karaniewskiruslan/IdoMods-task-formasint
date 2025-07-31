@@ -1,16 +1,15 @@
 .zoomedImagePopUp {
   --paddingSize: 32px;
 
-  width: 100dvw;
-  height: 100dvh;
-  position: fixed;
-  inset: 0 0 auto auto;
   background: var(--color-primary-black-popUp);
   display: grid;
+  height: 100dvh;
+  inset: 0 0 auto auto;
   place-items: center;
-  z-index: 100;
-
+  position: fixed;
   transition: 0.314s opacity ease-in-out;
+  width: 100dvw;
+  z-index: 100;
 }
 
 .zoomedImagePopUp--closed {
@@ -25,27 +24,27 @@
 }
 
 .popUpContainer {
-  width: 840px;
-  height: 640px;
   background: var(--color-primary-white);
   border-radius: 6px;
   display: flex;
-  place-items: center;
+  height: 640px;
   padding: var(--paddingSize);
+  place-items: center;
   position: relative;
+  width: 840px;
 }
 
 @media (width < 928px) {
   .popUpContainer {
-    width: 312px;
     height: 420px;
+    width: 312px;
   }
 }
 
 .popUpContainer__image {
-  width: 100%;
   height: 100%;
   object-fit: contain;
+  width: 100%;
 }
 
 @media (width < 928px) {
