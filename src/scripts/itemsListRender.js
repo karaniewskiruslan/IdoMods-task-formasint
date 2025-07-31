@@ -18,6 +18,7 @@ const createItemElement = (item) => {
   productIDtext.innerText = idText;
   const productImg = document.createElement("img");
   productImg.src = image;
+  productImg.decoding = "async";
   productImg.alt = text;
   productImg.setAttribute("loading", "lazy");
 

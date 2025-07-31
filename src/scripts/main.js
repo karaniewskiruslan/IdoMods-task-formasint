@@ -1,8 +1,6 @@
 import Swiper from "swiper";
 import { A11y, Navigation, Scrollbar } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/scrollbar";
 import setChangingPage from "./pageLoading";
 import { PAGE_AMOUNT } from "../constants/constants";
 import { renderItems, renderPageItems } from "./itemsListRender";
@@ -38,7 +36,6 @@ new Swiper(".my-swiper", {
     el: ".swiper__scrollbar",
     dragClass: "swiper__scrollbar--drag",
     hide: false,
-    draggable: true,
   },
 });
 

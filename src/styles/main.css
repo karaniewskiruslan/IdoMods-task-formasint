@@ -26,6 +26,7 @@
 
   --color-labels-bestseller: #d9d6b0;
   --color-labels-limited: #d4b0d9;
+  --padding-page: 42px;
 
   --header-padding: 32px;
   --header-margin: 80px;
@@ -35,6 +36,7 @@
   :root {
     --header-padding: 24px;
     --header-margin: 64px;
+    --padding-page: 16px;
   }
 }
 
@@ -46,18 +48,12 @@ body {
   display: grid;
   grid-template-rows: repeat(3, auto);
   min-height: 100dvh;
-  padding-inline: 42px;
+  padding-inline: var(--padding-page);
   overflow: hidden;
 }
 
 body:has(.zoomedImagePopUp--closed):has(.burgerMenu--closed) {
   overflow: auto;
-}
-
-@media (width < 640px) {
-  body {
-    padding-inline: 16px;
-  }
 }
 
 a {
