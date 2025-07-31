@@ -83,13 +83,23 @@ h2 {
   }
 }
 
-[data-bodyText] {
+[data-bodyText],
+[data-special] {
   font-size: 16px;
   line-height: 1.4;
   letter-spacing: -0.01em;
   font-weight: 500;
   text-transform: uppercase;
   white-space: nowrap;
+}
+@media (max-width: 639px) {
+  [data-special] {
+    font-size: 8px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
 }
 
 [data-bodyLarge] {

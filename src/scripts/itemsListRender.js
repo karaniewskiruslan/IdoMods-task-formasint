@@ -14,7 +14,7 @@ const createItemElement = (item) => {
   const productContainer = document.createElement("div");
   productContainer.classList.add("productItem__container");
   const productIDtext = document.createElement("p");
-  productIDtext.setAttribute("data-bodyText", "");
+  productIDtext.setAttribute("data-special", "");
   productIDtext.innerText = idText;
   const productImg = document.createElement("img");
   productImg.src = image;
